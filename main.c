@@ -7,23 +7,22 @@
 #define DL_DEF_WIDTH 500
 
 bool VersionPrint(UNUSED char *restrict sArg, UNUSED char *restrict sVal, UNUSED void *data, UNUSED GError **err){
-	g_print("dispersion-launch 0.3.2.127\nCopyright 2012-2016 Sokolov N. P. <0xE4524FFE@gmail.com>\nBy using this software you accept FLWP EULA\nYou can find FLWP EULA at https://github.com/0xe4524ffe/FLWP-EULA if it wasn't included\n");
+	g_print("dispersion-launch 0.4.0.129\nCopyright 2012-2016 Sokolov N. P. <0xE4524FFE@gmail.com>\nBy using this software you accept FLWP EULA\nYou can find FLWP EULA at https://github.com/0xe4524ffe/FLWP-EULA if it wasn't included\n");
 	exit(EXIT_SUCCESS);
 	return true;
 }
 
 bool KE(GtkWidget *w, GdkEventKey *e, UNUSED void *data){
 	if((e->keyval)==GDK_KEY_Return){
-		char *sExec=(char*)g_strconcat(gtk_entry_get_text(GTK_ENTRY(w)), " &", NULL);
 		if(!(system(NULL))) exit(EXIT_FAILURE);
+		char *sExec=(char*)g_strconcat(gtk_entry_get_text(GTK_ENTRY(w)), " &", NULL);
 		system((const char*)sExec);
-		g_free(sExec);
 		gtk_main_quit();
 	}
 	return false;
 }
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]){   
 	GError *err=NULL;
 	GOptionEntry aOpt[]={
 		{"version", 'V', G_OPTION_FLAG_NO_ARG, G_OPTION_ARG_CALLBACK, (void*)(intptr_t)VersionPrint, "Display version information and exit", NULL},
@@ -37,6 +36,13 @@ int main(int argc, char *argv[]){
 		exit(EXIT_FAILURE);
     }
     if(err) g_error_free(err);
+
+        if(argv[1]){
+                if(!system(NULL)) exit(EXIT_FAILURE);
+                char *sExec=g_strconcat("gtk-launch ", argv[1], " &");
+                system(sExec);
+                exit(EXIT_SUCCESS);
+        }
 
 	GtkWidget *frmMain=gtk_window_new(GTK_WINDOW_TOPLEVEL);
 		gtk_window_set_title(GTK_WINDOW(frmMain), "Launch");
