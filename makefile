@@ -34,7 +34,7 @@ NAME = dispersion-launch
 all: $(NAME)
 
 $(NAME): main.c
-	$(CC) $(CPPFLAGS) $(ALLCFLAGS) -Os $(LDFLAGS) $(LDLIBS) -o $@ $<
+	$(CC) $(CPPFLAGS) $(ALL_CFLAGS) -Os $(LDFLAGS) $(LDLIBS) -o $@ $<
 
 .PHONY: clean
 clean:
