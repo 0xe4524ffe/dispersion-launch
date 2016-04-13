@@ -1,4 +1,3 @@
-SHELL = /bin/sh
 override CC = gcc
 RM = rm -r
 INSTALL = install
@@ -34,7 +33,7 @@ NAME = dispersion-launch
 all: $(NAME)
 
 $(NAME): main.c
-	$(CC) $(CPPFLAGS) $(ALL_CFLAGS) -Os $(LDFLAGS) $(LDLIBS) -o $@ $<
+	$(CC) $(CPPFLAGS) $(ALL_CFLAGS) -Os $(LDLIBS) -o $@ $<
 
 .PHONY: clean
 clean:
