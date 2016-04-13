@@ -10,7 +10,7 @@
 #define DL_DEF_WIDTH 500
 
 bool VersionPrint(UNUSED char *restrict sArg, UNUSED char *restrict sVal, UNUSED void *data, UNUSED GError **err){
-	g_print("dispersion-launch 0.4.2.141\nCopyright 2012-2016 Sokolov N. P. <0xE4524FFE@gmail.com>\nBy using this software you accept FLWP EULA\nYou can find FLWP EULA at https://github.com/0xe4524ffe/FLWP-EULA if it wasn't included\n");
+	g_print("dispersion-launch 0.4.2.142\nCopyright 2012-2016 Sokolov N. P. <0xE4524FFE@gmail.com>\nBy using this software you accept FLWP EULA\nYou can find FLWP EULA at https://github.com/0xe4524ffe/FLWP-EULA if it wasn't included\n");
 	exit(EXIT_SUCCESS);
 	return true;
 }
