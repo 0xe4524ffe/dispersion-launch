@@ -4,7 +4,7 @@ INSTALL = install
 INSTALL_PROGRAM = $(INSTALL)
 INSTALL_DATA = $(INSTALL) -m 644
 prefix = /usr/local
-exec_prefix = ($prefix)
+exec_prefix = $(prefix)
 bindir = $(exec_prefix)/bin
 sbindir = $(exec_prefix)/sbin
 libexecdir = $(exec_prefix)/libexec
@@ -42,10 +42,10 @@ clean:
 .PHONY: install-strip install installdirs
 install-strip:
 	strip -s $(DESTDIR)$(bindir)/$(NAME)
-	objcopy --strip-all -R .comment -R .note.gnu.build-id -R .note.ABI-tag $(NAME) $(NAME)
+	objcopy --strip-all -R .comment -R .note.gnu.build-id -R .note.ABI-tag $(DESTDIR)$(bindir)/$(NAME) $(DESTDIR)$(bindir)/$(NAME)
 
 install: installdirs
-	$(INSTALL_PROGRAM) $(NAME) $(DESTDIR)$(bindir)
+	$(INSTALL_PROGRAM) $(NAME) $(DESTDIR)$(bindir)/$(NAME)
 
 installdirs:
 	mkdir -p $(DESTDIR)$(bindir)
