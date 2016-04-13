@@ -40,7 +40,7 @@ clean:
 	$(RM) ./$(NAME)
 
 .PHONY: install-strip install installdirs
-install-strip:
+install-strip: install
 	strip -s $(DESTDIR)$(bindir)/$(NAME)
 	objcopy --strip-all -R .comment -R .note.gnu.build-id -R .note.ABI-tag $(DESTDIR)$(bindir)/$(NAME) $(DESTDIR)$(bindir)/$(NAME)
 
