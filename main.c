@@ -1,3 +1,18 @@
+/*dispersion-launch 0.4.2.142 Copyright (C) 2016 Sokolov N. P. <0xE4524FFE@gmail.com>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -10,7 +25,7 @@
 #define DL_DEF_WIDTH 500
 
 bool VersionPrint(UNUSED char *restrict sArg, UNUSED char *restrict sVal, UNUSED void *data, UNUSED GError **err){
-	g_print("dispersion-launch 0.4.2.142\nCopyright 2012-2016 Sokolov N. P. <0xE4524FFE@gmail.com>\nBy using this software you accept FLWP EULA\nYou can find FLWP EULA at https://github.com/0xe4524ffe/FLWP-EULA if it wasn't included\n");
+	g_print("dispersion-launch 0.4.2.142\nCopyright (C) 2016 Sokolov N. P. <0xE4524FFE@gmail.com>\n");
 	exit(EXIT_SUCCESS);
 	return true;
 }
